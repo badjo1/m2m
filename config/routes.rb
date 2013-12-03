@@ -3,6 +3,9 @@ M2m::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  root 'static_pages#home'
+  
+  get "static_pages/home"
+  get "static_pages/help"
   
 end
