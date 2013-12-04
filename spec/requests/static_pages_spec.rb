@@ -2,19 +2,21 @@ require 'spec_helper'
 
 describe "Static pages" do
 
-	describe "Home page" do
-  	
-  		it "should have the content 'De kunst van het aanraken.'" do
-  		  	visit '/static_pages/home'
-    		expect(page).to have_content('De kunst van het aanraken.')
-  		end
-  		
-	  	it "should have the title 'Home'" do
-    		visit '/static_pages/home'
-      		expect(page).to have_title("Home")
-	    end
-  	
-  	end
+  subject { page }
+
+  describe "Home page" do
+    before { visit root_path }
+
+    it { should have_content('De kunst van het aanraken') }
+    it { should have_title('Home') }
+    #it { should_not have_title('| Home') }
+  end
+
+#  describe "Help page" do
+#    before { visit help_path }
+#    it { should have_content('Help') }
+#    it { should have_title(full_title('Help')) }
+#  end
 
 end
 
