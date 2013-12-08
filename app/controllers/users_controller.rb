@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @party = Party.new(party_params)
     if @party.save
       # Handle a successful save.
+      sign_in @party
       flash[:success] = "Welcome to the Shiatsu Wijzer"
       redirect_to  user_path(@party)
     else

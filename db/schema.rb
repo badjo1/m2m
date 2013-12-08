@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131204161816) do
+ActiveRecord::Schema.define(version: 20131208201213) do
 
   create_table "parties", force: true do |t|
     t.string   "name"
@@ -19,8 +19,10 @@ ActiveRecord::Schema.define(version: 20131204161816) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "remember_token"
   end
 
   add_index "parties", ["email"], name: "index_parties_on_email", unique: true
+  add_index "parties", ["remember_token"], name: "index_parties_on_remember_token"
 
 end
