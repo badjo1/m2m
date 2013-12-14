@@ -20,6 +20,7 @@ class Party < ActiveRecord::Base
   end
   
   private
+  
   def create_remember_token
     # Create the token.
     self.remember_token = Party.encrypt(Party.new_remember_token)
